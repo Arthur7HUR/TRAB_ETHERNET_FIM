@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho de Internet e Redes</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #cdbbd1;
+            color: #333;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        header {
+            position: relative;
+            background: url('cabos de rede.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            width: 100%;
+            height: 300px; /* Defina a altura desejada do cabeçalho */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5); /* Ajuste a transparência aqui */
+        }
+        header h1 {
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            z-index: 1; /* Garante que o texto fique acima da camada de transparência */
+        }
+        .container {
+            flex: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 80%;
+            margin: 20px 0;
+        }
+        .card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+        .card h2 {
+            color: #b62dd8;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #000000;
+            line-height: 1.5;
+        }
+        .card a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #b62dd8;
+            text-decoration: none;
+            border-bottom: 1px solid #000000;
+            transition: color 0.3s, border-color 0.3s;
+        }
+        .card a:hover {
+            color: #b62dd8;
+            border-color: #b62dd8;
+        }
+        footer {
+            background-color: #b62dd8;
+            color: white;
+            width: 100%;
+            text-align: center;
+            padding: 10px 0;
+            margin-top: auto; /* Garante que o rodapé fique na parte inferior */
+        }
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Trabalho de Internet e Redes</h1>
+    </header>
+    <div class="container">
+        <div class="card" id="ipv6">
+            <h2>Glossário</h2>
+            <p>Um glossário é uma lista alfabética de termos de um determinado domínio de conhecimento com a definição destes termos.</p>
+            <a href="file:///C:/Users/LabInfo/OneDrive/Desktop/REDES_T5-main%20(2)/REDES_T5-main/glossario_v2.html">Glossário</a>
+        </div>
+        <div class="card" id="ethernet">
+            <h2>Padrões Ethernet</h2>
+            <p>Os padrões Ethernet são uma família de tecnologias de rede de computadores utilizadas em redes locais (LAN).</p>
+            <a href="file:///C:/Users/LabInfo/OneDrive/Desktop/ETHERNET_FINAL-main/ETHERNET_FINAL-main/REDES_T6-main/PEthernet/index.html">Leia mais sobre Padrões Ethernet</a>
+        </div>
+        <div class="card" id="tcpudp">
+            <h2>TCP e UDP</h2>
+            <p>TCP e UDP são protocolos de comunicação utilizados para enviar dados pela internet. TCP é orientado a conexão e confiável, enquanto UDP é sem conexão e mais rápido.</p>
+            <a href="https://www.youtube.com/shorts/QIIq3hLDSck">Pequeno video sobre TCP e UDP</a>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Trabalho de Internet e Redes. Felipe Freguglia, Arthur Vinícius, Gabriel Barbosa.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                card.addEventListener('click', function() {
+                    alert('Você clicou em ' + this.querySelector('h2').innerText);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
